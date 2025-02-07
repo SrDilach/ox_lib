@@ -48,11 +48,11 @@ const InputDialog: React.FC = () => {
             row.type !== 'checkbox'
               ? row.type === 'date' || row.type === 'date-range' || row.type === 'time'
                 ? // Set date to current one if default is set to true
-                  row.default === true
+                row.default === true
                   ? new Date().getTime()
                   : Array.isArray(row.default)
-                  ? row.default.map((date) => new Date(date).getTime())
-                  : row.default && new Date(row.default).getTime()
+                    ? row.default.map((date) => new Date(date).getTime())
+                    : row.default && new Date(row.default).getTime()
                 : row.default
               : row.checked,
         } || { value: null }
@@ -104,7 +104,11 @@ const InputDialog: React.FC = () => {
         closeOnEscape={fields.options?.allowCancel !== false}
         closeOnClickOutside={false}
         size="xs"
-        styles={{ title: { textAlign: 'center', width: '100%', fontSize: 18 } }}
+        styles={{
+          title: { textAlign: 'center', width: '100%', fontSize: 18, color: 'white' },
+          modal: { backgroundColor: 'rgba(9, 15, 33, 0.8)', borderRadius: 8, padding: '20px' },
+          overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+        }}
         title={fields.heading}
         withCloseButton={false}
         overlayOpacity={0.5}
@@ -158,10 +162,27 @@ const InputDialog: React.FC = () => {
                 onClick={() => handleClose()}
                 mr={3}
                 disabled={fields.options?.allowCancel === false}
+                styles={{
+                  root: {
+                    backgroundColor: '#B71C1C',
+                    color: 'white',
+                    '&:hover': {
+                      backgroundColor: '#C62828',
+                    },
+                  },
+                }}
               >
                 {locale.ui.cancel}
               </Button>
-              <Button uppercase variant="light" type="submit">
+              <Button uppercase variant="light" type="submit" styles={{
+                root: {
+                  backgroundColor: '#00897B',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: ' #00A896',
+                  },
+                },
+              }}>
                 {locale.ui.confirm}
               </Button>
             </Group>

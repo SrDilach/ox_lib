@@ -10,7 +10,7 @@ import LibIcon from '../../../components/LibIcon';
 
 const useStyles = createStyles((theme, params: { position?: MenuPosition; itemCount: number; selected: number }) => ({
   tooltip: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'rgba(11, 19, 37, 0.9)',
     color: theme.colors.dark[2],
     borderRadius: theme.radius.sm,
     maxWidth: 350,
@@ -34,12 +34,12 @@ const useStyles = createStyles((theme, params: { position?: MenuPosition; itemCo
     maxHeight: 415,
     overflow: 'hidden',
     borderRadius: params.itemCount <= 6 || params.selected === params.itemCount - 1 ? theme.radius.md : undefined,
-    backgroundColor: theme.colors.dark[8],
+    backgroundColor: 'rgba(9, 15, 33, 0.9)',
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
   },
   scrollArrow: {
-    backgroundColor: theme.colors.dark[8],
+    backgroundColor: 'rgba(9, 15, 33, 0.9)',
     textAlign: 'center',
     borderBottomLeftRadius: theme.radius.md,
     borderBottomRightRadius: theme.radius.md,
@@ -147,8 +147,8 @@ const ListMenu: React.FC = () => {
         menu.items[selected].values
           ? indexStates[selected]
           : menu.items[selected].checked
-          ? checkedStates[selected]
-          : null,
+            ? checkedStates[selected]
+            : null,
         menu.items[selected].values ? 'isScroll' : menu.items[selected].checked ? 'isCheck' : null,
       ]).catch();
     }, 100);
@@ -203,13 +203,13 @@ const ListMenu: React.FC = () => {
           label={
             isValuesObject(menu.items[selected].values)
               ? // @ts-ignore
-                menu.items[selected].values[indexStates[selected]].description
+              menu.items[selected].values[indexStates[selected]].description
               : menu.items[selected].description
           }
           opened={
             isValuesObject(menu.items[selected].values)
               ? // @ts-ignore
-                !!menu.items[selected].values[indexStates[selected]].description
+              !!menu.items[selected].values[indexStates[selected]].description
               : !!menu.items[selected].description
           }
           transitionDuration={0}

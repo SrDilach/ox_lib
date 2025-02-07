@@ -34,6 +34,37 @@ const SelectField: React.FC<Props> = (props) => {
           clearable={props.row.clearable}
           searchable={props.row.searchable}
           icon={props.row.icon && <LibIcon icon={props.row.icon} fixedWidth />}
+          styles={{
+            input: {
+              backgroundColor: 'rgba(11, 19, 37, 0.8)',
+              color: 'white',
+              borderColor: '#74b3ba',
+              transition: 'border-color 0.2s ease-in-out',
+              '&:focus': {
+                borderColor: '#9BEFF8',
+                boxShadow: '0 0 5px #9BEFF8',
+              },
+              '&:hover': {
+                bborderColor: '#9BEFF8',
+              },
+            },
+            dropdown: { backgroundColor: 'rgba(30, 19, 37, 0.8)' },
+            item: {
+              color: 'white',
+              border: '1px solid #74b3ba',
+              borderRadius: '2px',
+              padding: '7px',
+              margin: '2px',
+              transition: 'background-color 0.2s ease-in-out, border-color 0.2s ease-in-out',
+              backgroundColor: 'rgba(11, 19, 37, 0.8)',
+              '&:hover': {
+                backgroundColor: '#74b3ba',
+                borderColor: '#9BEFF8',
+              },
+            },
+            label: { color: 'white' },
+            description: { color: 'white' },
+          }}
         />
       ) : (
         <>
@@ -53,6 +84,37 @@ const SelectField: React.FC<Props> = (props) => {
               searchable={props.row.searchable}
               maxSelectedValues={props.row.maxSelectedValues}
               icon={props.row.icon && <LibIcon icon={props.row.icon} fixedWidth />}
+              styles={{
+                input: {
+                  backgroundColor: 'rgba(11, 19, 37, 0.8)',
+                  color: 'white',
+                  borderColor: '#74b3ba',
+                  transition: 'border-color 0.2s ease-in-out',
+                  '&:focus': {
+                    borderColor: '#9BEFF8',
+                    boxShadow: '0 0 5px #9BEFF8',
+                  },
+                  '&:hover': {
+                    bborderColor: '#9BEFF8',
+                  },
+                },
+                dropdown: { backgroundColor: 'rgba(30, 19, 37, 0.8)' },
+                item: {
+                  color: 'white',
+                  border: '1px solid #74b3ba',
+                  borderRadius: '2px',
+                  padding: '7px',
+                  margin: '2px',
+                  transition: 'background-color 0.2s ease-in-out, border-color 0.2s ease-in-out',
+                  backgroundColor: 'rgba(11, 19, 37, 0.8)',
+                  '&:hover': {
+                    backgroundColor: '#74b3ba',
+                    borderColor: '#9BEFF8',
+                  },
+                },
+                label: { color: 'white' },
+                description: { color: 'white' },
+              }}
             />
           )}
         </>

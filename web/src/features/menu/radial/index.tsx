@@ -17,18 +17,18 @@ const useStyles = createStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
   sector: {
-    fill: theme.colors.dark[6],
-    color: theme.colors.dark[0],
+    fill: 'rgba(11, 19, 37, 0.8)',
+    color: '#74b3ba',
 
     '&:hover': {
-      fill: theme.fn.primaryColor(),
+      fill: '#9BEFF8',
       cursor: 'pointer',
       '> g > text, > g > svg > path': {
-        fill: '#fff',
+        fill: 'rgba(11, 19, 37, 0.8)',
       },
     },
     '> g > text': {
-      fill: theme.colors.dark[0],
+      fill: 'white',
       strokeWidth: 0,
     },
   },
@@ -36,13 +36,13 @@ const useStyles = createStyles((theme) => ({
     fill: theme.colors.dark[6],
   },
   centerCircle: {
-    fill: theme.fn.primaryColor(),
+    fill: '#B71C1C',
     color: '#fff',
     stroke: theme.colors.dark[6],
     strokeWidth: 4,
     '&:hover': {
       cursor: 'pointer',
-      fill: theme.colors[theme.primaryColor][theme.fn.primaryShade() - 1],
+      fill: '#C62828',
     },
   },
   centerIconContainer: {
@@ -182,9 +182,8 @@ const RadialMenu: React.FC = () => {
                   }}
                 >
                   <path
-                    d={`M175.01,175.01 l${175 - gap},0 A175.01,175.01 0 0,0 ${
-                      175 + (175 - gap) * Math.cos(-degToRad(pieAngle))
-                    }, ${175 + (175 - gap) * Math.sin(-degToRad(pieAngle))} z`}
+                    d={`M175.01,175.01 l${175 - gap},0 A175.01,175.01 0 0,0 ${175 + (175 - gap) * Math.cos(-degToRad(pieAngle))
+                      }, ${175 + (175 - gap) * Math.sin(-degToRad(pieAngle))} z`}
                   />
                   <g transform={`rotate(${index * pieAngle - 90} ${iconX} ${iconY})`} pointerEvents="none">
                     {typeof item.icon === 'string' && isIconUrl(item.icon) ? (

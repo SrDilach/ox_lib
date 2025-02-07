@@ -10,7 +10,7 @@ const useStyles = createStyles((theme) => ({
     width: 350,
     height: 45,
     borderRadius: theme.radius.sm,
-    backgroundColor: theme.colors.dark[5],
+    backgroundColor: 'rgba(11, 19, 37, 0.8)',
     overflow: 'hidden',
   },
   wrapper: {
@@ -24,7 +24,7 @@ const useStyles = createStyles((theme) => ({
   },
   bar: {
     height: '100%',
-    backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+    backgroundColor: '#9BEFF8',
   },
   labelWrapper: {
     position: 'absolute',
@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     fontSize: 20,
-    color: theme.colors.gray[3],
+    color: 'white',
     textShadow: theme.shadows.sm,
   },
 }));

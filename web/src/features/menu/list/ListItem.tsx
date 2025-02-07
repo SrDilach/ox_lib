@@ -15,14 +15,19 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'rgba(11, 19, 37, 0.7)',
     borderRadius: theme.radius.md,
     padding: 2,
     height: 60,
     scrollMargin: 8,
+    border: '2px solid #3a595d',
     '&:focus': {
-      backgroundColor: theme.colors.dark[4],
+      border: '2px solid #9BEFF8',
+      backgroundColor: 'rgba(11, 19, 37, 0.7)',
       outline: 'none',
+    },
+    '&:hover': {
+      border: '2px solid #9BEFF8',
     },
   },
   iconImage: {
@@ -41,10 +46,10 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   },
   icon: {
     fontSize: 24,
-    color: params.iconColor || theme.colors.dark[2],
+    color: params.iconColor || 'white',
   },
   label: {
-    color: theme.colors.dark[2],
+    color: 'white',
     textTransform: 'uppercase',
     fontSize: 12,
     verticalAlign: 'middle',
@@ -104,7 +109,7 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
               <Text>
                 {typeof item.values[scrollIndex] === 'object'
                   ? // @ts-ignore for some reason even checking the type TS still thinks it's a string
-                    item.values[scrollIndex].label
+                  item.values[scrollIndex].label
                   : item.values[scrollIndex]}
               </Text>
             </Stack>

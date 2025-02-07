@@ -1,9 +1,9 @@
 import React from 'react';
-import {createStyles, keyframes, RingProgress, Stack, Text, useMantineTheme} from '@mantine/core';
-import {useNuiEvent} from '../../hooks/useNuiEvent';
-import {fetchNui} from '../../utils/fetchNui';
+import { createStyles, keyframes, RingProgress, Stack, Text, useMantineTheme } from '@mantine/core';
+import { useNuiEvent } from '../../hooks/useNuiEvent';
+import { fetchNui } from '../../utils/fetchNui';
 import ScaleFade from '../../transitions/ScaleFade';
-import type {CircleProgressbarProps} from '../../typings';
+import type { CircleProgressbarProps } from '../../typings';
 
 // 33.5 is the r of the circle
 const progressCircle = keyframes({
@@ -23,7 +23,7 @@ const useStyles = createStyles((theme, params: { position: 'middle' | 'bottom'; 
   },
   progress: {
     '> svg > circle:nth-child(1)': {
-      stroke: theme.colors.dark[5],
+      stroke: 'rgba(11, 19, 37, 0.8)',
     },
     // Scuffed way of grabbing the first section and animating it
     '> svg > circle:nth-child(2)': {
@@ -88,7 +88,7 @@ const CircleProgressbar: React.FC = () => {
             <RingProgress
               size={90}
               thickness={7}
-              sections={[{ value: 0, color: theme.primaryColor }]}
+              sections={[{ value: 0, color: '#9BEFF8' }]}
               onAnimationEnd={() => setVisible(false)}
               className={classes.progress}
               label={<Text className={classes.value}>{value}%</Text>}

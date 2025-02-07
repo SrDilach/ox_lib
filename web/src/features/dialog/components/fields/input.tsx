@@ -12,7 +12,7 @@ interface Props {
 
 const useStyles = createStyles((theme) => ({
   eyeIcon: {
-    color: theme.colors.dark[2],
+    color: '#9BEFF8',
   },
 }));
 
@@ -33,6 +33,22 @@ const InputField: React.FC<Props> = (props) => {
           maxLength={props.row.max}
           disabled={props.row.disabled}
           withAsterisk={props.row.required}
+          styles={{
+            input: {
+              backgroundColor: 'rgba(11, 19, 37, 0.8)',
+              color: 'white',
+              borderColor: '#74b3ba',
+              '&:focus': {
+                borderColor: '#9BEFF8',
+                boxShadow: '0 0 5px #9BEFF8',
+              },
+              '&:hover': {
+                borderColor: '#9BEFF8',
+              },
+            },
+            label: { color: 'white' },
+            description: { color: 'white' },
+          }}
         />
       ) : (
         <PasswordInput
@@ -55,6 +71,28 @@ const InputField: React.FC<Props> = (props) => {
               fixedWidth
             />
           )}
+          styles={{
+            input: {
+              backgroundColor: 'rgba(11, 19, 37, 0.8)',
+              color: 'white',
+              borderColor: '#74b3ba',
+              '&:focus': {
+                borderColor: '#9BEFF8',
+                boxShadow: '0 0 5px #9BEFF8',
+              },
+              '&:hover': {
+                borderColor: '#9BEFF8',
+              },
+            },
+            label: { color: 'white' },
+            description: { color: 'white' },
+            visibilityToggle: {
+              color: '#9BEFF8',
+            },
+            icon: {
+              color: '#9BEFF8',
+            },
+          }}
         />
       )}
     </>

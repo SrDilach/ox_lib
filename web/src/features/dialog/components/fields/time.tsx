@@ -31,6 +31,23 @@ const TimeField: React.FC<Props> = (props) => {
       withAsterisk={props.row.required}
       clearable={props.row.clearable}
       icon={props.row.icon && <LibIcon fixedWidth icon={props.row.icon} />}
+      styles={{
+        input: {
+          backgroundColor: 'rgba(11, 19, 37, 0.8)',
+          color: 'white',
+          borderColor: '#74b3ba',
+          transition: 'border-color 0.2s ease-in-out',
+          '&:focus': {
+            borderColor: '#9BEFF8',
+            boxShadow: '0 0 5px #9BEFF8',
+          },
+          '&:hover': {
+            borderColor: '#9BEFF8',
+          },
+        },
+        label: { color: 'white' },
+        description: { color: 'white' },
+      }}
     />
   );
 };

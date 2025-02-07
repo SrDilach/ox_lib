@@ -12,10 +12,11 @@ const useStyles = createStyles((theme) => ({
   container: {
     width: 300,
     height: 'fit-content',
-    backgroundColor: theme.colors.dark[6],
-    color: theme.colors.dark[0],
-    padding: 12,
-    borderRadius: theme.radius.sm,
+    backgroundColor: 'rgba(9, 15, 33, 0.9)',
+    color: 'white',
+    padding: 10,
+    borderRadius: "5px",
+    border: "1px solid #74b3ba",
     fontFamily: 'Roboto',
     boxShadow: theme.shadows.sm,
   },
@@ -25,13 +26,13 @@ const useStyles = createStyles((theme) => ({
   },
   description: {
     fontSize: 12,
-    color: theme.colors.dark[2],
+    color: 'white',
     fontFamily: 'Roboto',
     lineHeight: 'normal',
   },
   descriptionOnly: {
     fontSize: 14,
-    color: theme.colors.dark[2],
+    color: 'white',
     fontFamily: 'Roboto',
     lineHeight: 'normal',
   },
@@ -53,7 +54,7 @@ const getAnimation = (visible: boolean, position: string) => {
   let animation: { from: string; to: string };
 
   if (visible) {
-    animation = position.includes('bottom') ? { from: 'Y(30px)', to: 'Y(0px)' } : { from: 'Y(-30px)', to:'Y(0px)' };
+    animation = position.includes('bottom') ? { from: 'Y(30px)', to: 'Y(0px)' } : { from: 'Y(-30px)', to: 'Y(0px)' };
   } else {
     if (position.includes('right')) {
       animation = { from: 'X(0px)', to: 'X(100%)' }
@@ -123,22 +124,22 @@ const Notifications: React.FC = () => {
     if (!data.iconColor) {
       switch (data.type) {
         case 'error':
-          iconColor = 'red.6';
+          iconColor = 'rgb(244, 67, 54)';
           break;
         case 'success':
-          iconColor = 'teal.6';
+          iconColor = 'rgb(76, 175, 80)';
           break;
         case 'warning':
-          iconColor = 'yellow.6';
+          iconColor = 'rgb(255, 193, 7)';
           break;
         default:
-          iconColor = 'blue.6';
+          iconColor = 'rgb(33, 150, 243)';
           break;
       }
     } else {
       iconColor = tinycolor(data.iconColor).toRgbString();
     }
-    
+
     toast.custom(
       (t) => (
         <Box

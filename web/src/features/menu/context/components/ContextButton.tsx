@@ -27,9 +27,12 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   button: {
     height: 'fit-content',
     width: '100%',
+    backgroundColor: 'rgba(11, 19, 37, 0.8)',
     padding: 10,
+    border: '2px solid transparent',
     '&:hover': {
-      backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
+      backgroundColor: params.readOnly ? theme.colors.dark[6] : 'rgba(9, 15, 33, 0.9)',
+      border: '2px solid #9BEFF8',
       cursor: params.readOnly ? 'unset' : 'pointer',
     },
     '&:active': {
@@ -40,12 +43,13 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     maxWidth: '25px',
   },
   description: {
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[2],
+    color: params.disabled ? theme.colors.dark[3] : 'white',
     fontSize: 12,
   },
   dropdown: {
     padding: 10,
     color: theme.colors.dark[0],
+    backgroundColor: 'rgba(11, 19, 37, 0.9)',
     fontSize: 14,
     maxWidth: 256,
     width: 'fit-content',
@@ -116,7 +120,7 @@ const ContextButton: React.FC<{
                             icon={button.icon as IconProp}
                             fixedWidth
                             size="lg"
-                            style={{ color: button.iconColor }}
+                            style={{ color: '#9BEFF8' }}
                             animation={button.iconAnimation}
                           />
                         )}
@@ -138,7 +142,7 @@ const ContextButton: React.FC<{
               </Stack>
               {(button.menu || button.arrow) && button.arrow !== false && (
                 <Stack className={classes.buttonArrowContainer}>
-                  <LibIcon icon="chevron-right" fixedWidth />
+                  <LibIcon icon="chevron-right" fixedWidth style={{ color: '#9BEFF8' }} />
                 </Stack>
               )}
             </Group>
